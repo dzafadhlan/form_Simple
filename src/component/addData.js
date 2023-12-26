@@ -16,7 +16,7 @@ const AddData = () => {
     const saveData = async(e) =>{
         e.preventDefault()
         try {
-            await axios.post('http://localhost:5000/users',{
+            await axios.post('https://splendid-dango-4708ea.netlify.app/.netlify/functions/api/user',{
                 alamat,
                 email,
                 gender,

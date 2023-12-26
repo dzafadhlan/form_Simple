@@ -19,7 +19,7 @@ const EditData = () => {
 
     const getUserById = async () =>{
         try {
-            const responnse = await axios.get(`http://localhost:5000/users/${id}`)
+            const responnse = await axios.get(`https://splendid-dango-4708ea.netlify.app/.netlify/functions/api/user/${id}`)
             setName(responnse.data.name)
             setEmail(responnse.data.email)
             setGender(responnse.data.gender)
@@ -39,7 +39,7 @@ const EditData = () => {
     const editData = async(e) =>{
         e.preventDefault()
         try {
-            await axios.patch(`http://localhost:5000/users/${id}`,{
+            await axios.patch(`https://splendid-dango-4708ea.netlify.app/.netlify/functions/api/user/${id}`,{
                 alamat,
                 email,
                 gender,

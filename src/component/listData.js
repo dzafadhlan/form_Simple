@@ -9,13 +9,17 @@ const ListData = () => {
     },[])
     
     const getData = async() =>{
-        const responsed = await axios.get('http://localhost:5000/users')
+        const responsed = await axios.get('https://splendid-dango-4708ea.netlify.app/.netlify/functions/api/user')
         setData(responsed.data)
         console.log(responsed.data)
     }
     const deleteData = async(id) =>{
         try {
-            await axios.delete(`http://localhost:5000/users/${id}`)
+            await axios.delete(`https://splendid-dango-4708ea.netlify.app/.netlify/functions/api/user/${id}`,data,
+            {headers: {
+                'Content-Type': 'application/json',
+            },
+        })
             getData();
         } catch (error) {
             console.log(error)
